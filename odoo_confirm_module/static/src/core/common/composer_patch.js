@@ -9,7 +9,7 @@ patch(Composer.prototype, {
         }
         this.env.services.dialog.add(ConfirmationDialog, {
             title: "Odoo Confirm 😺",
-            body: "Are you sure you want to send this message?",
+            body: "Are you sure you want to send this message?\n\n" + this.props.composer.text,
             confirmLabel: "Send",
             confirm: async () => {
                 await super.sendMessage(...arguments);
